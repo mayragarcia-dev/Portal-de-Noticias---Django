@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ article.title }} - Portal de Noticias{% endblock %}
+
+{% block content %}
+<article>
+    <header class="mb-4">
+        {% if article.category %}
+        <span class="badge bg-primary mb-2">{{ article.category.name }}</span>
+        {% endif %}
+        <h1>{{ article.title }}</h1>
+        <div class="text-muted mb-3">
+            {% if article.author %}
+            Por {{ article.author }}
+            {% endif %}
+            {% if article.published_at %}
+            {% if article.author %} • {% endif %}
+            {{ article.published_at|date:"d M Y H:i" }}
+            {% endif %}
+        </div>
+    </header>
+
+    {% if article.featured_image %}
+    <img src="{{ article.featured_image.url }}" class="img-fluid rounded mb-4" alt="{{ article.title }}">
+    {% endif %}
+
+    <div class="article-content">
+        {{ article.content|linebreaks }}
+    </div>
+</article>
+
+<hr class="my-4">
+
+<div class="text-center">
+    <a href="{% url 'news:home' %}" class="btn btn-outline-secondary">Volver al inicio</a>
+    {% if article.category %}
+    <a href="{{ article.category.get_absolute_url }}" class="btn btn-outline-primary ms-2">Más en {{ article.category.name }}</a>
+    {% endif %}
+</div>
+{% endblock %}
