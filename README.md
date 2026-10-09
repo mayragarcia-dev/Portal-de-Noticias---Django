@@ -63,8 +63,11 @@ pip install Django Pillow
 # Aplicar migraciones
 python manage.py migrate
 
-# Crear superusuario (opcional, ya existe admin/admin123)
-python manage.py createsuperuser
+# Cargar datos de ejemplo: superusuario admin/admin123, 3 categorías, 3 autores y 6 noticias
+python manage.py seed_news
+
+# Casos de prueba (13 tests: plantillas, URLs, static, admin, escapado automático, semilla)
+python manage.py test news
 
 # Ejecutar servidor
 python manage.py runserver
@@ -197,6 +200,11 @@ if settings.DEBUG:
 4. Base de datos PostgreSQL/MySQL
 5. `python manage.py collectstatic` → sirve `staticfiles/` con Nginx/Apache
 6. Media files servidos por servidor web (no Django)
+
+## Documentación y evidencias
+
+- `docs/prueba_escapado_automatico.md` → punto 12: qué muestra la página con HTML en el cuerpo y por qué (autoescape).
+- `docs/evidencias/` → verificación de servidores (200 en portada, categoría, detalle, CSS y media), capturas HTML de las páginas y del panel admin, y resultado de los 13 casos de prueba.
 
 ## Licencia
 

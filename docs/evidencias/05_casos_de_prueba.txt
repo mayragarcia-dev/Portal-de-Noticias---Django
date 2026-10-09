@@ -1,0 +1,25 @@
+﻿python : Creating test database for alias 'default'...
+En línea: 1 Carácter: 179
++ ... p\opencode\verify_portal.py"; python manage.py test news 2>&1 | Out-F ...
++                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Creating test d...as 'default'...:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+.............
+----------------------------------------------------------------------
+Ran 13 tests in 8.609s
+
+OK
+Destroying test database for alias 'default'...
+
+Found 13 test(s).
+System check identified no issues (0 silenced).
+Superusuario admin/admin123 creado.
+Noticia creada: Django 6.1 llega con mejoras de rendimiento
+Noticia creada: Inteligencia artificial: c¾mo cambia el trabajo de los programadores
+Noticia creada: La selecci¾n define su convocatoria para el pr¾ximo torneo
+Noticia creada: Resumen de la jornada: goles y sorpresas en el campeonato local
+Noticia creada: El cine independiente espa±ol gana presencia en festivales
+Noticia creada: Una etiqueta HTML de prueba: <b>esto debe verse como texto</b>
+Listo: 6 noticias publicadas en 3 categorÝas.

@@ -4,7 +4,7 @@
     {% endif %}
     <div class="card-body">
         <h5 class="card-title">
-            <a href="{{ article.get_absolute_url }}" class="text-decoration-none text-dark">{{ article.title }}</a>
+            <a href="{% url 'news:article_detail' slug=article.slug %}" class="text-decoration-none text-dark">{{ article.title }}</a>
         </h5>
         {% if article.category %}
         <span class="badge bg-primary mb-2">{{ article.category.name }}</span>
@@ -19,7 +19,7 @@
                 • {{ article.published_at|date:"d M Y" }}
                 {% endif %}
             </small>
-            <a href="{{ article.get_absolute_url }}" class="btn btn-sm btn-outline-primary">Leer más</a>
+            <a href="{% url 'news:article_detail' slug=article.slug %}" class="btn btn-sm btn-outline-primary">Leer más</a>
         </div>
     </div>
 </div>

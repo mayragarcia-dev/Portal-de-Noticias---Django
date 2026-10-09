@@ -1,0 +1,22 @@
+P9  portada: 200
+P9  listado categoria: 200
+P9  detalle noticia: 200
+P10 hoja de estilos: 200 (text/css)
+P10 imagen media: 200 (image/png)
+P10 link a styles.css en el HTML: True
+P11 noticias visibles en la portada: 6
+P12 etiqueta <b> se muestra escapada: True
+P12 etiqueta <script> se muestra escapada: True
+P9  enlaces con {% url %} en plantillas: 9
+P9  direcciones escritas a mano en plantillas: 0
+P11 Article: list_display=True list_filter=True search_fields=True
+P11 Category: list_display=True list_filter=True search_fields=True
+P11 Author: list_display=True list_filter=True search_fields=True
+P11 categorias en BD: 3
+P11 noticias publicadas en BD: 6
+P11 autores en BD: 3
+P11 panel admin accesible: 302
+P11 login admin: True
+P11 admin /admin/news/article/: 200
+P11 admin /admin/news/category/: 200
+P11 admin /admin/news/author/: 200

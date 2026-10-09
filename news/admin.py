@@ -4,14 +4,16 @@ from .models import Article, Category, Author
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug']
+    list_display = ['name', 'slug', 'description']
+    list_filter = ['name']
     prepopulated_fields = {'slug': ('name',)}
-    search_fields = ['name']
+    search_fields = ['name', 'description']
 
 
 @admin.register(Author)
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ['user', 'website', 'created_at']
+    list_filter = ['created_at', 'website']
     search_fields = ['user__username', 'user__first_name', 'user__last_name', 'bio']
     raw_id_fields = ['user']
 

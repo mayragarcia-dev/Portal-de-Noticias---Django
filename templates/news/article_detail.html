@@ -6,7 +6,9 @@
 <article>
     <header class="mb-4">
         {% if article.category %}
-        <span class="badge bg-primary mb-2">{{ article.category.name }}</span>
+        <a href="{% url 'news:category_detail' slug=article.category.slug %}" class="badge bg-primary text-decoration-none mb-2">
+            {{ article.category.name }}
+        </a>
         {% endif %}
         <h1>{{ article.title }}</h1>
         <div class="text-muted mb-3">
@@ -27,6 +29,31 @@
     <div class="article-content">
         {{ article.content|linebreaks }}
     </div>
+
+    {% if article.author %}
+    <div class="card mt-4">
+        <div class="card-body d-flex align-items-center">
+            {% if article.author.avatar %}
+            <img src="{{ article.author.avatar.url }}" alt="{{ article.author }}" class="rounded-circle me-3" width="64" height="64" style="object-fit: cover;">
+            {% endif %}
+            <div>
+                <h6 class="mb-1">Escrito por {{ article.author }}</h6>
+                {% if article.author.bio %}
+                <p class="text-muted mb-0">{{ article.author.bio }}</p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+    {% if article.category and article.category.description %}
+    <div class="card mt-3">
+        <div class="card-body">
+            <h6 class="mb-1">Categoría: {{ article.category.name }}</h6>
+            <p class="text-muted mb-0">{{ article.category.description }}</p>
+        </div>
+    </div>
+    {% endif %}
 </article>
 
 <hr class="my-4">
@@ -34,7 +61,7 @@
 <div class="text-center">
     <a href="{% url 'news:home' %}" class="btn btn-outline-secondary">Volver al inicio</a>
     {% if article.category %}
-    <a href="{{ article.category.get_absolute_url }}" class="btn btn-outline-primary ms-2">Más en {{ article.category.name }}</a>
+    <a href="{% url 'news:category_detail' slug=article.category.slug %}" class="btn btn-outline-primary ms-2">Más en {{ article.category.name }}</a>
     {% endif %}
 </div>
 {% endblock %}

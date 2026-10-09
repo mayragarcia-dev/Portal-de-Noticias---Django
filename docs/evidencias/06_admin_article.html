@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+
+<html lang="en-us" dir="ltr">
+<head>
+<title>Select Artículo to change | Django site admin</title>
+<meta name="color-scheme" content="light dark" />
+<link rel="stylesheet" href="/static/admin/css/base.css" >
+
+  <link rel="stylesheet" href="/static/admin/css/dark_mode.css" >
+  <script src="/static/admin/js/theme.js" ></script>
+
+
+  <link rel="stylesheet" href="/static/admin/css/nav_sidebar.css" >
+  <script src="/static/admin/js/nav_sidebar.js" defer ></script>
+
+
+  
+  <link rel="stylesheet" href="/static/admin/css/changelists.css" >
+  
+  
+    <script src="/admin/jsi18n/" ></script>
+  
+  
+  
+
+
+
+
+<script src="/static/admin/js/vendor/jquery/jquery.js"></script>
+<script src="/static/admin/js/jquery.init.js"></script>
+<script src="/static/admin/js/core.js"></script>
+<script src="/static/admin/js/admin/RelatedObjectLookups.js"></script>
+<script src="/static/admin/js/actions.js"></script>
+<script src="/static/admin/js/urlify.js"></script>
+<script src="/static/admin/js/prepopulate.js"></script>
+<script src="/static/admin/js/vendor/xregexp/xregexp.js"></script>
+<script src="/static/admin/js/filters.js" defer ></script>
+
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/admin/css/responsive.css" >
+    
+
+<meta name="robots" content="NONE,NOARCHIVE">
+</head>
+
+<body class=" app-news model-article change-list"
+  data-admin-utc-offset="0"
+  data-admin-server-timezone="UTC">
+<a href="#content-start" class="skip-to-content-link">Skip to main content</a>
+<!-- Container -->
+<div id="container">
+
+    
+    <!-- Header -->
+    
+      <header id="header">
+        <div id="branding">
+        
+<div id="site-name"><a href="/admin/">Django administration</a></div>
+
+
+        </div>
+        
+        
+        <div id="user-tools">
+            
+                Welcome,
+                <strong>admin</strong>.
+            
+            
+                
+                    <a href="/">View site</a> /
+                
+                
+                    
+                    
+                
+                
+                <a href="/admin/password_change/">Change password</a> /
+                
+                <form id="logout-form" method="post" action="/admin/logout/">
+                    <input type="hidden" name="csrfmiddlewaretoken" value="EgGThpQOS3w1O8PQPXLDxclYxSkY6mZAMpoivgA8oTu6n3eEfWmuqjRwfSuevRdO">
+                    <button type="submit">Log out</button>
+                </form>
+                
+<button class="theme-toggle">
+  <span class="visually-hidden theme-label-when-auto">Toggle theme (current theme: auto)</span>
+  <span class="visually-hidden theme-label-when-light">Toggle theme (current theme: light)</span>
+  <span class="visually-hidden theme-label-when-dark">Toggle theme (current theme: dark)</span>
+  <svg aria-hidden="true" class="theme-icon-when-auto">
+    <use xlink:href="#icon-auto" />
+  </svg>
+  <svg aria-hidden="true" class="theme-icon-when-dark">
+    <use xlink:href="#icon-moon" />
+  </svg>
+  <svg aria-hidden="true" class="theme-icon-when-light">
+    <use xlink:href="#icon-sun" />
+  </svg>
+</button>
+
+            
+        </div>
+        
+        
+        
+      </header>
+    
+    <!-- END Header -->
+    
+      <nav aria-label="Breadcrumbs">
+        
+<ol class="breadcrumbs">
+<li><a href="/admin/">Home</a></li>
+<li><a href="/admin/news/">News</a></li>
+<li aria-current="page">Artículos</li>
+</ol>
+
+      </nav>
+    
+    
+
+    <div class="main" id="main">
+      
+        
+          
+<button class="sticky toggle-nav-sidebar" id="toggle-nav-sidebar" aria-label="Toggle navigation"></button>
+<nav class="sticky" id="nav-sidebar" aria-label="Sidebar">
+  <input type="search" id="nav-filter"
+         placeholder="Start typing to filter…"
+         aria-label="Filter navigation items">
+  
+
+
+  
+    <div class="app-auth module">
+      <table>
+        <caption>
+          <a href="/admin/auth/" class="section">Authentication and Authorization</a>
+        </caption>
+        <thead class="visually-hidden">
+          <tr>
+            <th scope="col">Model name</th>
+            <th scope="col">Add link</th>
+            <th scope="col">Change or view list link</th>
+          </tr>
+        </thead>
+        
+          
+            <tr class="model-group">
+              <th scope="row" id="auth-group">
+                
+                  <a href="/admin/auth/group/">Groups</a>
+                
+              </th>
+
+              
+                <td><a href="/admin/auth/group/add/" class="addlink" aria-describedby="auth-group">Add</a></td>
+              
+
+              
+            </tr>
+          
+        
+          
+            <tr class="model-user">
+              <th scope="row" id="auth-user">
+                
+                  <a href="/admin/auth/user/">Users</a>
+                
+              </th>
+
+              
+                <td><a href="/admin/auth/user/add/" class="addlink" aria-describedby="auth-user">Add</a></td>
+              
+
+              
+            </tr>
+          
+        
+      </table>
+    </div>
+  
+    <div class="app-news module current-app">
+      <table>
+        <caption>
+          <a href="/admin/news/" class="section">News</a>
+        </caption>
+        <thead class="visually-hidden">
+          <tr>
+            <th scope="col">Model name</th>
+            <th scope="col">Add link</th>
+            <th scope="col">Change or view list link</th>
+          </tr>
+        </thead>
+        
+          
+            <tr class="model-article current-model">
+              <th scope="row" id="news-article">
+                
+                  <a href="/admin/news/article/" aria-current="page">Artículos</a>
+                
+              </th>
+
+              
+                <td><a href="/admin/news/article/add/" class="addlink" aria-describedby="news-article">Add</a></td>
+              
+
+              
+            </tr>
+          
+        
+          
+            <tr class="model-author">
+              <th scope="row" id="news-author">
+                
+                  <a href="/admin/news/author/">Autores</a>
+                
+              </th>
+
+              
+                <td><a href="/admin/news/author/add/" class="addlink" aria-describedby="news-author">Add</a></td>
+              
+
+              
+            </tr>
+          
+        
+          
+            <tr class="model-category">
+              <th scope="row" id="news-category">
+                
+                  <a href="/admin/news/category/">Categorías</a>
+                
+              </th>
+
+              
+                <td><a href="/admin/news/category/add/" class="addlink" aria-describedby="news-category">Add</a></td>
+              
+
+              
+            </tr>
+          
+        
+      </table>
+    </div>
+  
+
+
+</nav>
+
+        
+      
+      <main id="content-start" class="content" tabindex="-1">
+        
+          
+        
+        <!-- Content -->
+        <div id="content" class="">
+          <div class="titles-and-tools">
+            <div class="titles">
+              
+              <h1>Select Artículo to change</h1>
+              
+            </div>
+            
+<ul class="object-tools">
+  
+    
+
+
+  
+  <li>
+    
+    <a href="/admin/news/article/add/" class="addlink">
+      Add Artículo
+    </a>
+  </li>
+  
+
+
+  
+</ul>
+
+          </div>
+          
+  <div id="content-main">
+    
+    <div class="module filtered" id="changelist">
+      <div class="changelist-form-container">
+        
+          
+          <search id="changelist-filter" aria-labelledby="changelist-filter-header">
+            <h2 id="changelist-filter-header">Filter</h2>
+            <div id="changelist-filter-extra-actions">
+              <h3>
+                <a href="?_facets=True" class="viewlink">Show counts</a>
+              </h3>
+              
+            </div>
+            
+<details data-filter-title="status" open>
+  <summary>
+     By status 
+  </summary>
+  <ul>
+  
+    <li class="selected">
+    <a href="?">All</a></li>
+  
+    <li>
+    <a href="?status__exact=draft">Borrador</a></li>
+  
+    <li>
+    <a href="?status__exact=published">Publicado</a></li>
+  
+  </ul>
+</details>
+
+<details data-filter-title="category" open>
+  <summary>
+     By category 
+  </summary>
+  <ul>
+  
+    <li class="selected">
+    <a href="?">All</a></li>
+  
+    <li>
+    <a href="?category__id__exact=3">Cultura</a></li>
+  
+    <li>
+    <a href="?category__id__exact=2">Deportes</a></li>
+  
+    <li>
+    <a href="?category__id__exact=1">Tecnología</a></li>
+  
+    <li>
+    <a href="?category__isnull=True">-</a></li>
+  
+  </ul>
+</details>
+
+<details data-filter-title="author" open>
+  <summary>
+     By author 
+  </summary>
+  <ul>
+  
+    <li class="selected">
+    <a href="?">All</a></li>
+  
+    <li>
+    <a href="?author__id__exact=1">Ana García</a></li>
+  
+    <li>
+    <a href="?author__id__exact=2">Luis Pérez</a></li>
+  
+    <li>
+    <a href="?author__id__exact=3">María López</a></li>
+  
+    <li>
+    <a href="?author__isnull=True">-</a></li>
+  
+  </ul>
+</details>
+
+<details data-filter-title="published at" open>
+  <summary>
+     By published at 
+  </summary>
+  <ul>
+  
+    <li class="selected">
+    <a href="?">Any date</a></li>
+  
+    <li>
+    <a href="?published_at__gte=2026-10-09+00%3A00%3A00%2B00%3A00&amp;published_at__lt=2026-10-10+00%3A00%3A00%2B00%3A00">Today</a></li>
+  
+    <li>
+    <a href="?published_at__gte=2026-10-02+00%3A00%3A00%2B00%3A00&amp;published_at__lt=2026-10-10+00%3A00%3A00%2B00%3A00">Past 7 days</a></li>
+  
+    <li>
+    <a href="?published_at__gte=2026-10-01+00%3A00%3A00%2B00%3A00&amp;published_at__lt=2026-11-01+00%3A00%3A00%2B00%3A00">This month</a></li>
+  
+    <li>
+    <a href="?published_at__gte=2026-01-01+00%3A00%3A00%2B00%3A00&amp;published_at__lt=2027-01-01+00%3A00%3A00%2B00%3A00">This year</a></li>
+  
+    <li>
+    <a href="?published_at__isnull=True">No date</a></li>
+  
+    <li>
+    <a href="?published_at__isnull=False">Has date</a></li>
+  
+  </ul>
+</details>
+
+          </search>
+          
+        
+        <div>
+          
+
+<div id="toolbar">
+<h2 id="changelist-search-form" class="visually-hidden">Search Artículos</h2>
+<form id="changelist-search" method="get" role="search" aria-labelledby="changelist-search-form">
+<div><!-- DIV needed for valid HTML -->
+<label for="searchbar"><img src="/static/admin/img/search.svg" alt="Search"></label>
+<input type="text" size="40" name="q" value="" id="searchbar">
+<input type="submit" value="Search">
+
+
+</div>
+
+</form></div>
+
+
+          
+
+<nav class="toplinks" aria-labelledby="date-hierarchy-label">
+<span id="date-hierarchy-label">Filter by published at</span>
+
+
+<a href="?published_at__year=2026" class="date-back">&lsaquo; 2026</a>
+
+
+
+<a href="?published_at__day=4&amp;published_at__month=10&amp;published_at__year=2026">October 4</a>
+
+<a href="?published_at__day=5&amp;published_at__month=10&amp;published_at__year=2026">October 5</a>
+
+<a href="?published_at__day=6&amp;published_at__month=10&amp;published_at__year=2026">October 6</a>
+
+<a href="?published_at__day=7&amp;published_at__month=10&amp;published_at__year=2026">October 7</a>
+
+<a href="?published_at__day=8&amp;published_at__month=10&amp;published_at__year=2026">October 8</a>
+
+<a href="?published_at__day=9&amp;published_at__month=10&amp;published_at__year=2026">October 9</a>
+
+
+
+</nav>
+
+
+
+          <form id="changelist-form" method="post" novalidate><input type="hidden" name="csrfmiddlewaretoken" value="EgGThpQOS3w1O8PQPXLDxclYxSkY6mZAMpoivgA8oTu6n3eEfWmuqjRwfSuevRdO">
+          
+
+          
+            
+<div class="actions">
+  
+    
+    <label>Action: <select name="action" required>
+  <option value="" selected>- Select an option -</option>
+
+  <option value="delete_selected">Delete selected Artículos</option>
+
+</select></label><input type="hidden" name="select_across" value="0" class="select-across">
+    
+    
+    <button type="submit" class="button" name="index" value="0">Run</button>
+    
+    
+    
+        <span class="action-counter" data-actions-icnt="6" aria-live="polite" aria-atomic="true">0 of 6 selected</span>
+        
+    
+    
+  
+</div>
+
+            
+
+
+<div class="results">
+<table id="result_list">
+<thead>
+<tr>
+
+<th scope="col" class="action-checkbox-column">
+   
+   <div class="text"><span><input type="checkbox" id="action-toggle" aria-label="Select all objects on this page for an action"></span></div>
+   <div class="clear"></div>
+</th>
+<th scope="col" class="sortable column-title">
+   
+   <div class="text"><a role="button" href="?o=1.-5.-6">Title</a></div>
+   <div class="clear"></div>
+</th>
+<th scope="col" class="sortable column-category">
+   
+   <div class="text"><a role="button" href="?o=2.-5.-6">Category</a></div>
+   <div class="clear"></div>
+</th>
+<th scope="col" class="sortable column-author">
+   
+   <div class="text"><a role="button" href="?o=3.-5.-6">Author</a></div>
+   <div class="clear"></div>
+</th>
+<th scope="col" class="sortable column-status">
+   
+   <div class="text"><a role="button" href="?o=4.-5.-6">Status</a></div>
+   <div class="clear"></div>
+</th>
+<th scope="col" class="sortable column-published_at sorted descending">
+   
+       <div class="sortoptions">
+         <a class="sortremove" href="?o=-6" title="Remove from sorting"></a>
+         <span class="sortpriority" title="Sorting priority: 1">1</span>
+         <a href="?o=5.-6" class="toggle descending" title="Toggle sorting"></a>
+       </div>
+   
+   <div class="text"><a role="button" href="?o=5.-6">Published at</a></div>
+   <div class="clear"></div>
+</th>
+<th scope="col" class="sortable column-created_at sorted descending">
+   
+       <div class="sortoptions">
+         <a class="sortremove" href="?o=-5" title="Remove from sorting"></a>
+         <span class="sortpriority" title="Sorting priority: 2">2</span>
+         <a href="?o=-5.6" class="toggle descending" title="Toggle sorting"></a>
+       </div>
+   
+   <div class="text"><a role="button" href="?o=6.-5">Created at</a></div>
+   <div class="clear"></div>
+</th>
+</tr>
+</thead>
+<tbody>
+
+
+<tr><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="1" class="action-select" aria-label="Select this object for an action - Django 6.1 llega con mejoras de rendimiento"></td><th class="field-title"><a href="/admin/news/article/1/change/">Django 6.1 llega con mejoras de rendimiento</a></th><td class="field-category nowrap">Tecnología</td><td class="field-author nowrap">Ana García</td><td class="field-status">Publicado</td><td class="field-published_at nowrap">Oct. 9, 2026, 4:46 a.m.</td><td class="field-created_at nowrap">Oct. 9, 2026, 4:40 a.m.</td></tr>
+
+
+<tr><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="2" class="action-select" aria-label="Select this object for an action - Inteligencia artificial: cómo cambia el trabajo de los programadores"></td><th class="field-title"><a href="/admin/news/article/2/change/">Inteligencia artificial: cómo cambia el trabajo de los programadores</a></th><td class="field-category nowrap">Tecnología</td><td class="field-author nowrap">Ana García</td><td class="field-status">Publicado</td><td class="field-published_at nowrap">Oct. 8, 2026, 4:46 a.m.</td><td class="field-created_at nowrap">Oct. 9, 2026, 4:40 a.m.</td></tr>
+
+
+<tr><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="3" class="action-select" aria-label="Select this object for an action - La selección define su convocatoria para el próximo torneo"></td><th class="field-title"><a href="/admin/news/article/3/change/">La selección define su convocatoria para el próximo torneo</a></th><td class="field-category nowrap">Deportes</td><td class="field-author nowrap">Luis Pérez</td><td class="field-status">Publicado</td><td class="field-published_at nowrap">Oct. 7, 2026, 4:46 a.m.</td><td class="field-created_at nowrap">Oct. 9, 2026, 4:40 a.m.</td></tr>
+
+
+<tr><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="4" class="action-select" aria-label="Select this object for an action - Resumen de la jornada: goles y sorpresas en el campeonato local"></td><th class="field-title"><a href="/admin/news/article/4/change/">Resumen de la jornada: goles y sorpresas en el campeonato local</a></th><td class="field-category nowrap">Deportes</td><td class="field-author nowrap">Luis Pérez</td><td class="field-status">Publicado</td><td class="field-published_at nowrap">Oct. 6, 2026, 4:46 a.m.</td><td class="field-created_at nowrap">Oct. 9, 2026, 4:40 a.m.</td></tr>
+
+
+<tr><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="5" class="action-select" aria-label="Select this object for an action - El cine independiente español gana presencia en festivales"></td><th class="field-title"><a href="/admin/news/article/5/change/">El cine independiente español gana presencia en festivales</a></th><td class="field-category nowrap">Cultura</td><td class="field-author nowrap">María López</td><td class="field-status">Publicado</td><td class="field-published_at nowrap">Oct. 5, 2026, 4:46 a.m.</td><td class="field-created_at nowrap">Oct. 9, 2026, 4:40 a.m.</td></tr>
+
+
+<tr><td class="action-checkbox"><input type="checkbox" name="_selected_action" value="7" class="action-select" aria-label="Select this object for an action - Una etiqueta HTML de prueba: &lt;b&gt;esto debe verse como texto&lt;/b&gt;"></td><th class="field-title"><a href="/admin/news/article/7/change/">Una etiqueta HTML de prueba: &lt;b&gt;esto debe verse como texto&lt;/b&gt;</a></th><td class="field-category nowrap">Cultura</td><td class="field-author nowrap">María López</td><td class="field-status">Publicado</td><td class="field-published_at nowrap">Oct. 4, 2026, 4:46 a.m.</td><td class="field-created_at nowrap">Oct. 9, 2026, 4:46 a.m.</td></tr>
+
+</tbody>
+</table>
+</div>
+
+
+            
+          
+          
+            <div class="changelist-footer">
+            
+
+<nav class="paginator" aria-labelledby="pagination">
+    <h2 id="pagination" class="visually-hidden">Pagination Artículos</h2>
+    
+6 Artículos
+
+</nav>
+
+            
+            </div>
+          
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+          
+          <br class="clear">
+        </div>
+        <!-- END Content -->
+      </main>
+    </div>
+    <footer id="footer"></footer>
+</div>
+<!-- END Container -->
+
+<!-- SVGs -->
+<svg xmlns="http://www.w3.org/2000/svg" class="base-svgs">
+  <symbol viewBox="0 0 24 24" id="icon-auto"><path d="M0 0h24v24H0z" fill="currentColor"/><path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2V4a8 8 0 1 0 0 16z"/></symbol>
+  <symbol viewBox="0 0 24 24" id="icon-moon"><path d="M0 0h24v24H0z" fill="currentColor"/><path d="M10 7a7 7 0 0 0 12 4.9v.1c0 5.523-4.477 10-10 10S2 17.523 2 12 6.477 2 12 2h.1A6.979 6.979 0 0 0 10 7zm-6 5a8 8 0 0 0 15.062 3.762A9 9 0 0 1 8.238 4.938 7.999 7.999 0 0 0 4 12z"/></symbol>
+  <symbol viewBox="0 0 24 24" id="icon-sun"><path d="M0 0h24v24H0z" fill="currentColor"/><path d="M12 18a6 6 0 1 1 0-12 6 6 0 0 1 0 12zm0-2a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM11 1h2v3h-2V1zm0 19h2v3h-2v-3zM3.515 4.929l1.414-1.414L7.05 5.636 5.636 7.05 3.515 4.93zM16.95 18.364l1.414-1.414 2.121 2.121-1.414 1.414-2.121-2.121zm2.121-14.85l1.414 1.415-2.121 2.121-1.414-1.414 2.121-2.121zM5.636 16.95l1.414 1.414-2.121 2.121-1.414-1.414 2.121-2.121zM23 11v2h-3v-2h3zM4 11v2H1v-2h3z"/></symbol>
+</svg>
+<!-- END SVGs -->
+
+</body>
+</html>
