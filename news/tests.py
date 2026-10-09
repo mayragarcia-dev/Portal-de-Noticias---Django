@@ -75,6 +75,16 @@ class PlantillasTestCase(TestCase):
         self.assertIn('{% load static %}', source)
         self.assertIn("{% static 'css/styles.css' %}", source)
 
+    def test_fragmentos_reutilizados_sin_repetir_marcado(self):
+        home = (PROJECT_ROOT / 'templates' / 'news' / 'home.html').read_text(encoding='utf-8')
+        category = (PROJECT_ROOT / 'templates' / 'news' / 'category_detail.html').read_text(encoding='utf-8')
+        self.assertIn("{% include '_article_card.html' %}", home)
+        self.assertIn("{% include '_article_card.html' %}", category)
+        self.assertIn("{% include '_pagination.html' %}", home)
+        self.assertIn("{% include '_pagination.html' %}", category)
+        self.assertNotIn('<nav', home)
+        self.assertNotIn('<nav', category)
+
 
 class EstilosServidosTestCase(StaticLiveServerTestCase):
     """Punto 10: la hoja de estilos se sirve correctamente en el servidor."""

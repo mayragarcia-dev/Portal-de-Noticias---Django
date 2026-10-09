@@ -144,23 +144,41 @@ Fragmento reutilizable con:
 - Autor y fecha de publicación
 - Botón "Leer más"
 
+### _pagination.html
+Fragmento reutilizable con los controles de paginación (Anterior / Página X de Y / Siguiente).
+Se incluye desde `news/home.html` y desde `news/category_detail.html` para no repetir marcado.
+
 ### news/home.html
 - Extiende `base.html`
 - Grid de 2 columnas (col-md-6)
 - `{% for article in articles %}` con `{% empty %}` para caso sin resultados
-- Paginación con controles Anterior/Siguiente
+- Reutiliza `_article_card.html` y `_pagination.html`
 - Filtros: `|date:"d M Y"` y `|truncatewords:30`
 
 ### news/category_detail.html
 - Igual que home pero filtrado por categoría
 - Muestra nombre y descripción de la categoría
-- Reutiliza `_article_card.html`
+- Reutiliza `_article_card.html` y `_pagination.html`
 
 ### news/article_detail.html
 - Header con categoría, título, autor y fecha
 - Imagen destacada a ancho completo
 - Contenido con filtro `|linebreaks`
 - Botones de navegación (Inicio, Más en categoría)
+
+### Observaciones sobre las plantillas
+- **Herencia**: todas las páginas heredan de `base.html` y rellenan los bloques
+  `title`, `content` y `sidebar`; el marcado común (cabecera, barra lateral, pie) se escribe una sola vez.
+- **Fragmentos sin repetir marcado**: `_article_card.html` (tarjeta de noticia) y `_pagination.html`
+  (paginación) se incluyen con `{% include %}` desde varias plantillas.
+- **Sin lógica de negocio**: las plantillas solo recorren (`for`), condicionan (`if`/`empty`) y
+  formatean (`date`, `truncatewords`, `linebreaks`); el filtrado por `status='published'` y la
+  paginación se resuelven en las vistas.
+- **Enlaces con `{% url %}`**: no hay direcciones escritas a mano en ninguna plantilla.
+- **Escapado automático**: el contenido del artículo se pinta con `{{ article.content|linebreaks }}`;
+  `autoescape` convierte el HTML en texto seguro (ver `docs/prueba_escapado_automatico.md`).
+- **Contenido dinámico**: noticias, categorías y autores provienen del panel de administración;
+  cambiar un dato en el panel se refleja en el sitio sin tocar plantillas.
 
 ## Panel de Administración
 
