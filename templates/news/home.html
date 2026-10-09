@@ -3,13 +3,14 @@
 {% block title %}Inicio - Portal de Noticias{% endblock %}
 
 {% block content %}
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h2>Últimas noticias</h2>
+<div class="d-flex justify-content-between align-items-end mb-4">
+    <h2 class="section-title">Últimas noticias</h2>
+    <p class="section-subtitle d-none d-md-block">Lo más reciente de la redacción</p>
 </div>
 
-<div class="row">
+<div class="row g-4">
     {% for article in articles %}
-    <div class="col-md-6 mb-4">
+    <div class="col-md-6">
         {% include '_article_card.html' %}
     </div>
     {% empty %}

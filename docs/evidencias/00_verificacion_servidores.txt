@@ -7,7 +7,7 @@ P10 link a styles.css en el HTML: True
 P11 noticias visibles en la portada: 6
 P12 etiqueta <b> se muestra escapada: True
 P12 etiqueta <script> se muestra escapada: True
-P9  enlaces con {% url %} en plantillas: 9
+P9  enlaces con {% url %} en plantillas: 11
 P9  direcciones escritas a mano en plantillas: 0
 P11 Article: list_display=True list_filter=True search_fields=True
 P11 Category: list_display=True list_filter=True search_fields=True

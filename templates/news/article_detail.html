@@ -10,20 +10,17 @@
             {{ article.category.name }}
         </a>
         {% endif %}
-        <h1>{{ article.title }}</h1>
-        <div class="text-muted mb-3">
-            {% if article.author %}
-            Por {{ article.author }}
-            {% endif %}
-            {% if article.published_at %}
-            {% if article.author %} • {% endif %}
-            {{ article.published_at|date:"d M Y H:i" }}
-            {% endif %}
+        <h1 class="mb-3">{{ article.title }}</h1>
+        <div class="article-meta">
+            {% if article.author %}Por <strong>{{ article.author }}</strong>{% endif %}
+            {% if article.published_at %}{% if article.author %} • {% endif %}{{ article.published_at|date:"d M Y H:i" }}{% endif %}
         </div>
     </header>
 
     {% if article.featured_image %}
-    <img src="{{ article.featured_image.url }}" class="img-fluid rounded mb-4" alt="{{ article.title }}">
+    <div class="article-hero mb-4">
+        <img src="{{ article.featured_image.url }}" alt="{{ article.title }}">
+    </div>
     {% endif %}
 
     <div class="article-content">
@@ -32,9 +29,9 @@
 
     {% if article.author %}
     <div class="card mt-4">
-        <div class="card-body d-flex align-items-center">
+        <div class="card-body d-flex align-items-center gap-3">
             {% if article.author.avatar %}
-            <img src="{{ article.author.avatar.url }}" alt="{{ article.author }}" class="rounded-circle me-3" width="64" height="64" style="object-fit: cover;">
+            <img src="{{ article.author.avatar.url }}" alt="{{ article.author }}" class="rounded-circle article-author-avatar">
             {% endif %}
             <div>
                 <h6 class="mb-1">Escrito por {{ article.author }}</h6>
@@ -58,10 +55,10 @@
 
 <hr class="my-4">
 
-<div class="text-center">
+<div class="d-flex flex-wrap gap-2">
     <a href="{% url 'news:home' %}" class="btn btn-outline-secondary">Volver al inicio</a>
     {% if article.category %}
-    <a href="{% url 'news:category_detail' slug=article.category.slug %}" class="btn btn-outline-primary ms-2">Más en {{ article.category.name }}</a>
+    <a href="{% url 'news:category_detail' slug=article.category.slug %}" class="btn btn-outline-primary">Más en {{ article.category.name }}</a>
     {% endif %}
 </div>
 {% endblock %}

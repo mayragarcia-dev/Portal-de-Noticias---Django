@@ -5,88 +5,100 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tecnología - Portal de Noticias</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="/static/css/styles.css" rel="stylesheet">
     
 </head>
 <body>
-    <header class="bg-dark text-white py-3">
+    <div class="portal-topbar py-2">
+        <div class="container d-flex justify-content-between align-items-center">
+            <span>Tu diario digital de actualidad</span>
+            <a href="/admin/">Acceso al panel</a>
+        </div>
+    </div>
+
+    <header class="portal-header py-3">
         <div class="container">
-            <h1 class="mb-0"><a href="/" class="text-white text-decoration-none">Portal de Noticias</a></h1>
-            <nav class="mt-2">
-                <a href="/" class="text-white me-3">Inicio</a>
-                <a href="/admin/" class="text-white me-3">Admin</a>
-            </nav>
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <a href="/" class="portal-logo">Portal<span>.</span>Noticias</a>
+                <nav class="portal-nav d-flex flex-wrap gap-1">
+                    <a href="/">Inicio</a>
+                    
+                    <a href="/categoria/cultura/">Cultura</a>
+                    
+                    <a href="/categoria/deportes/">Deportes</a>
+                    
+                    <a href="/categoria/tecnologia/">Tecnología</a>
+                    
+                </nav>
+            </div>
         </div>
     </header>
 
     <main class="container my-4">
-        <div class="row">
-            <div class="col-md-8">
+        <div class="row g-4">
+            <div class="col-lg-8">
                 
-<div class="d-flex justify-content-between align-items-center mb-4">
-    <h2>Tecnología</h2>
+<div class="mb-4">
+    <h2 class="section-title">Tecnología</h2>
     
-    <p class="text-muted mb-0">Noticias sobre programación, inteligencia artificial y gadgets.</p>
+    <p class="section-subtitle mt-2">Noticias sobre programación, inteligencia artificial y gadgets.</p>
     
 </div>
 
-<div class="row">
+<div class="row g-4">
     
-    <div class="col-md-6 mb-4">
-        <div class="card mb-3 h-100">
+    <div class="col-md-6">
+        <div class="card mb-4 h-100">
     
-    <img src="/media/articles/django-61-llega-con-mejoras-de-rendimiento.png" class="card-img-top" alt="Django 6.1 llega con mejoras de rendimiento" style="height: 200px; object-fit: cover;">
+    <img src="/media/articles/django-61-llega-con-mejoras-de-rendimiento.png" class="card-img-top" alt="Django 6.1 llega con mejoras de rendimiento">
     
-    <div class="card-body">
+    <div class="card-body d-flex flex-column">
+        
+        <a href="/categoria/tecnologia/" class="badge bg-primary align-self-start mb-2">Tecnología</a>
+        
         <h5 class="card-title">
-            <a href="/articulo/django-61-llega-con-mejoras-de-rendimiento/" class="text-decoration-none text-dark">Django 6.1 llega con mejoras de rendimiento</a>
+            <a href="/articulo/django-61-llega-con-mejoras-de-rendimiento/">Django 6.1 llega con mejoras de rendimiento</a>
         </h5>
-        
-        <span class="badge bg-primary mb-2">Tecnología</span>
-        
-        <p class="card-text">La nueva versión del framework favorito de Python trae optimizaciones en consultas y una plantilla de seguridad más estricta.</p>
-        <div class="d-flex justify-content-between align-items-center">
+        <p class="card-text flex-grow-1">La nueva versión del framework favorito de Python trae optimizaciones en consultas y una plantilla de seguridad más estricta.</p>
+        <div class="d-flex justify-content-between align-items-center mt-auto">
             <small class="text-muted">
-                
                 Por Ana García
-                
-                
-                • 09 Oct 2026
-                
+                 • 09 Oct 2026
             </small>
             <a href="/articulo/django-61-llega-con-mejoras-de-rendimiento/" class="btn btn-sm btn-outline-primary">Leer más</a>
         </div>
     </div>
 </div>
+
     </div>
     
-    <div class="col-md-6 mb-4">
-        <div class="card mb-3 h-100">
+    <div class="col-md-6">
+        <div class="card mb-4 h-100">
     
-    <img src="/media/articles/inteligencia-artificial-como-cambia-el-trabajo-de-los-programadores.png" class="card-img-top" alt="Inteligencia artificial: cómo cambia el trabajo de los programadores" style="height: 200px; object-fit: cover;">
+    <img src="/media/articles/inteligencia-artificial-como-cambia-el-trabajo-de-los-programadores.png" class="card-img-top" alt="Inteligencia artificial: cómo cambia el trabajo de los programadores">
     
-    <div class="card-body">
+    <div class="card-body d-flex flex-column">
+        
+        <a href="/categoria/tecnologia/" class="badge bg-primary align-self-start mb-2">Tecnología</a>
+        
         <h5 class="card-title">
-            <a href="/articulo/inteligencia-artificial-como-cambia-el-trabajo-de-los-programadores/" class="text-decoration-none text-dark">Inteligencia artificial: cómo cambia el trabajo de los programadores</a>
+            <a href="/articulo/inteligencia-artificial-como-cambia-el-trabajo-de-los-programadores/">Inteligencia artificial: cómo cambia el trabajo de los programadores</a>
         </h5>
-        
-        <span class="badge bg-primary mb-2">Tecnología</span>
-        
-        <p class="card-text">Las herramientas de IA asistida ya forman parte del día a día de los equipos de desarrollo.</p>
-        <div class="d-flex justify-content-between align-items-center">
+        <p class="card-text flex-grow-1">Las herramientas de IA asistida ya forman parte del día a día de los equipos de desarrollo.</p>
+        <div class="d-flex justify-content-between align-items-center mt-auto">
             <small class="text-muted">
-                
                 Por Ana García
-                
-                
-                • 08 Oct 2026
-                
+                 • 08 Oct 2026
             </small>
             <a href="/articulo/inteligencia-artificial-como-cambia-el-trabajo-de-los-programadores/" class="btn btn-sm btn-outline-primary">Leer más</a>
         </div>
     </div>
 </div>
+
     </div>
     
 </div>
@@ -95,31 +107,23 @@
 
 
             </div>
-            <aside class="col-md-4">
+            <aside class="col-lg-4 portal-sidebar">
                 
                 <div class="card">
-                    <div class="card-header">
-                        <h5>Categorías</h5>
-                    </div>
+                    <div class="card-header">Categorías</div>
                     <div class="card-body">
-                        <ul class="list-unstyled">
+                        <ul class="list-unstyled mb-0">
                             
                             <li class="mb-2">
-                                <a href="/categoria/cultura/" class="text-decoration-none">
-                                    Cultura
-                                </a>
+                                <a href="/categoria/cultura/">Cultura</a>
                             </li>
                             
                             <li class="mb-2">
-                                <a href="/categoria/deportes/" class="text-decoration-none">
-                                    Deportes
-                                </a>
+                                <a href="/categoria/deportes/">Deportes</a>
                             </li>
                             
                             <li class="mb-2">
-                                <a href="/categoria/tecnologia/" class="text-decoration-none">
-                                    Tecnología
-                                </a>
+                                <a href="/categoria/tecnologia/">Tecnología</a>
                             </li>
                             
                         </ul>
@@ -130,8 +134,9 @@
         </div>
     </main>
 
-    <footer class="bg-light py-3 mt-5">
-        <div class="container text-center text-muted">
+    <footer class="portal-footer py-4">
+        <div class="container text-center">
+            <p class="mb-1"><strong>Portal de Noticias</strong> — información veraz y cercana.</p>
             <small>&copy; 2026 Portal de Noticias. Todos los derechos reservados.</small>
         </div>
     </footer>

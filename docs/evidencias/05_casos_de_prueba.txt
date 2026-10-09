@@ -1,8 +1,25 @@
-﻿python : C:\Users\User\AppData\Local\Programs\Python\Python312\python.exe: can't open file 'C:\\Trabajo\\manage.py': 
-[Errno 2] No such file or directory
-En línea: 1 Carácter: 254
-+ ... p\opencode\verify_portal.py"; python manage.py test news 2>&1 | Out-F ...
+﻿python : Creating test database for alias 'default'...
+En línea: 1 Carácter: 226
++ ... as\04_styles.css.txt" -Force; python manage.py test news 2>&1 | Out-F ...
 +                                   ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    + CategoryInfo          : NotSpecified: (C:\Users\User\A...le or directory:String) [], RemoteException
+    + CategoryInfo          : NotSpecified: (Creating test d...as 'default'...:String) [], RemoteException
     + FullyQualifiedErrorId : NativeCommandError
  
+
+..............
+----------------------------------------------------------------------
+Ran 14 tests in 6.225s
+
+OK
+Destroying test database for alias 'default'...
+
+Found 14 test(s).
+System check identified no issues (0 silenced).
+Superusuario admin/admin123 creado.
+Noticia creada: Django 6.1 llega con mejoras de rendimiento
+Noticia creada: Inteligencia artificial: c¾mo cambia el trabajo de los programadores
+Noticia creada: La selecci¾n define su convocatoria para el pr¾ximo torneo
+Noticia creada: Resumen de la jornada: goles y sorpresas en el campeonato local
+Noticia creada: El cine independiente espa±ol gana presencia en festivales
+Noticia creada: Una etiqueta HTML de prueba: <b>esto debe verse como texto</b>
+Listo: 6 noticias publicadas en 3 categorÝas.
